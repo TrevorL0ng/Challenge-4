@@ -12,7 +12,7 @@
 
 <!-- Setting seperate top elements that won't be changed as much. -->
     <header>
-    <h3 class="row p-4 mx-2" id="see-scores">See the Highscores!</h3>
+    <h3 id="see-scores" class="row p-4 mx-2">See the Highscores!</h3>
     <h3 class="timer my-4 text-center">Time Left: <span id="timer"></span></h3>
     </header>
 
@@ -26,7 +26,16 @@
                 Answer as many questions as possible within the allocated time. 
                 A correct answer will net you 5 points! Though a wrong answer will remove 1 point and 5 seconds from your time.
             </p>
-            <button class="btn start bg-dark text-white" id="start">BEGIN!</button>
+            <button id="start" class="btn start bg-dark text-white">BEGIN!</button>
+        </article>
+    </section>
+
+    <!-- Generated section depending on what question the user is on -->
+    <section id="question-container" class="d-flex flex-column align-items-center my-4 hide">
+        <article class="quiz-questions">
+            <article class="question"></article>
+
+            <article id="answers" class="btn-block"></article>
         </article>
     </section>
 
