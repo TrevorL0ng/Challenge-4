@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
+<!-- JS script from which most of the action will be pulled -->
+    <script src="./assets/js/script.js"></script>
 
 <!-- Setting seperate top elements that won't be changed as much. -->
     <header>
@@ -53,7 +55,7 @@
 
 <!-- End card section that allows the user to insert initials for score keeping -->
     <section id="outro-container" class="d-flex flex-column text-center align-items-center my-4 hide">
-        <article class="container outro">
+        <article class="outro">
             <article id=your-score>
                 <h2>Awesome! That's it!</h2>
             </article>
@@ -66,8 +68,15 @@
         </article>
     </section>
 
-    
-
+<!-- Section that will show and clear the high scores -->
+    <section id="score-container" class="d-flex flex-column text-center align-items-center my-4 hide">
+        <h2 class="bigScores">
+            High Scores!
+        </h2>
+        <ol id="bigScores-list" class="score-list d-flex text-center align-items-center my-2"></ol>
+        <button id="go-back" class="btn d-flex my-3 bg-dark text-white">Go Back!</button>
+        <button id="clear-bigScores" class="btn d-flex my-3 bg-dark text-white">Clear High Scores!</button>
+    </section>
     
 
 
