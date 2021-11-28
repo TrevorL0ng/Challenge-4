@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz: Nerd Edition!</title>
+    <title>Code Quiz: The Code Reloaded</title>
+<!-- Using Bootstrap for css after learning in class for next challenge. Sometimes procrastination pays off. (No it doesn't, do not do that)  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
+
+<!-- Setting seperate top elements that won't be changed as much. -->
+    <header>
     <h3 class="row p-4 mx-2" id="see-scores">See the Highscores!</h3>
-    <h3 class="timer text-center">Time Left: <span id="timer"></span></h3>
+    <h3 class="timer my-4 text-center">Time Left: <span id="timer"></span></h3>
+    </header>
+
+<!-- Intro card explaining how the game works -->
+    <section id="intro-container" class="show">
+        <article class="intro d-flex flex-column align-items-center my-4">
+            <h2>
+                The Code Reloaded Quiz
+            </h2>
+            <p>
+                Answer as many questions as possible within the allocated time. 
+                A correct answer will net you 5 points! Though a wrong answer will remove 1 point and 5 seconds from your time.
+            </p>
+            <button class="btn start bg-dark text-white" id="start">BEGIN!</button>
+        </article>
+    </section>
+
 </body>
 </html>
