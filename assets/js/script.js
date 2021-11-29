@@ -1,6 +1,6 @@
 // Setting our DOM elements in order used on HTML
 var viewBigScore = document.getElementById("see-scores");
-var timerClock = document.getElementById("timer");
+var timerClock = document.querySelector("#timer");
 var introScreen = document.getElementById("intro-container");
 var startButton = document.getElementById("start");
 var questionScreen = document.getElementById("question-container");
@@ -15,7 +15,6 @@ var highScoreScreen = document.getElementById("score-container");
 var bigScoresCard = document.getElementById("bigScores-list");
 var backButton = document.getElementById("go-back");
 var clearButton = document.getElementById("clear-bigScores");
-var timeLeft;
 var score = 0;
 var endQuiz;
 
@@ -36,4 +35,36 @@ var questions = [
     // },
 ];
 
-console.log(questions);
+// Setting up the start of the game. Timer is set and made to increment down every second
+var timeLeft;
+var setClock = function (){
+    timeLeft = 42;
+
+var gameClock = setInterval(function(){
+    timerClock.innerText = timeLeft;
+    timeLeft--
+
+    if (timeLeft < 0) {
+        ShowBSL();
+        timerClock.textContent = 0;
+        clearInterval(gameClock);
+    }
+
+    if (endQuiz) {
+        clearInterval(gameClock);
+    }
+
+}, 1000)
+};
+setClock()
+console.log(timeLeft)
+
+// We remove the elements of the intro once 'begin' is clicked and insert the questions
+
+var startGame = function () {
+    introScreen.classList.add("hide");
+    introScreen.classList.remove("show");
+    questionScreen.classList.add("show");
+    questionScreen.classList.remove("hide");
+
+}
