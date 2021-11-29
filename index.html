@@ -7,6 +7,7 @@
     <title>Code Quiz: The Code Reloaded</title>
 <!-- Using Bootstrap for css after learning in class for next challenge. Sometimes procrastination pays off. (No it doesn't, do not do that)  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+
 </head>
 <body>
 
@@ -32,7 +33,7 @@
     </section>
 
 <!-- Generated section depending on what question the user is on -->
-    <section id="question-container" class="d-flex flex-column text-center align-items-center my-4 hide">
+    <section id="question-container" class="d-flex flex-column text-center align-items-center my-4">
         <article class="quiz-questions">
             <article id="question"></article>
 
@@ -41,35 +42,36 @@
     </section>
 
 <!-- Section to inform the user if their answer was correct or incorrect -->
-    <section class="d-flex flex-column text-center align-items-center my-4 hide" id="right">
-        <h3>
+    <section class="d-flex flex-column text-center align-items-center my-4" id="right">
+        <h3 class="d-none">
             Correct! Nice!
         </h3>
     </section>
-    <section class="d-flex flex-column text-center align-items-center my-4 hide" id="wrong"> 
-        <h3>
+    <section class="d-flex flex-column text-center align-items-center my-4 d-none" id="wrong"> 
+        <h3 class="d-none">
             Sorry, that's not correct!
         </h3>
     </section>
 
 <!-- End card section that allows the user to insert initials for score keeping -->
-    <section id="outro-container" class="d-flex flex-column text-center align-items-center my-4 hide">
+    <section id="outro-container" class="d-flex flex-column text-center align-items-center my-4 d-none">
         <article class="outro">
-            <article id=your-score>
+            <article class="d-none" id=your-score>
                 <h2>Awesome! That's it!</h2>
             </article>
-            <form id="score-form" class="d-flex flex-column text-center align-items-center my-4 hide"
-                <h3>
+            <form id="score-form" class="d-flex flex-column text-center align-items-center my-4 d-none">
+                <h3 class="d-none">
                     Enter your initials:
                     <input type="text" name="init" id="init" class="text-input" />
                     <button class="btn startstop bg-dark rounded text-white" id="submit-name" type="submit">Submit!</button>
                 </h3>
+            </form>
         </article>
     </section>
 
 <!-- Section that will show and clear the high scores -->
-    <section id="score-container" class="d-flex flex-column text-center align-items-center my-4 hide">
-        <h2 class="bigScores">
+    <!-- <section id="score-container" class="d-flex flex-column text-center align-items-center my-4 d-none">
+        <h2 class="bigScores d-none">
             High Scores!
         </h2>
         <ol id="bigScores-list" class="score-list d-flex text-center align-items-center my-2"></ol>
@@ -79,10 +81,14 @@
         <button id="clear-bigScores" class="btn d-flex my-3 bg-dark text-white">
             Clear High Scores!
         </button>
-    </section>
+    </section> -->
+
     
 <!-- JS script from which most of the action will be pulled -->
     <script src="./assets/js/script.js"></script>
+
+     <!-- Added link to the jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </body>
 </html>

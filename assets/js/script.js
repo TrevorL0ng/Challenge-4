@@ -41,30 +41,37 @@ var setClock = function (){
     timeLeft = 42;
 
 var gameClock = setInterval(function(){
-    timerClock.innerText = timeLeft;
+    timerClock.textContent = timeLeft;
     timeLeft--
 
-    if (timeLeft < 0) {
-        ShowBSL();
-        timerClock.textContent = 0;
-        clearInterval(gameClock);
-    }
+    // if (timeLeft < 0) {
+    //     ShowBSL();
+    //     timerClock.textContent = 0;
+    //     clearInterval(gameClock);
+    // }
 
-    if (endQuiz) {
-        clearInterval(gameClock);
-    }
+    // if (endQuiz) {
+    //     clearInterval(gameClock);
+    // }
 
 }, 1000)
 };
-setClock()
-console.log(timeLeft)
 
 // We remove the elements of the intro once 'begin' is clicked and insert the questions
 
 var startGame = function () {
-    introScreen.classList.add("hide");
+    introScreen.classList.add("d-none");
     introScreen.classList.remove("show");
     questionScreen.classList.add("show");
-    questionScreen.classList.remove("hide");
-
+    questionScreen.classList.remove("d-none");
+    setClock();
 }
+
+// Button listener declared after the function it is calling
+startButton.addEventListener("click", startGame);
+
+// Question list to be cycled through
+
+
+
+
